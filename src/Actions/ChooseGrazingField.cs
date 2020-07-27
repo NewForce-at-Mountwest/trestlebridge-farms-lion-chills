@@ -23,6 +23,7 @@ namespace Trestlebridge.Actions
             Console.WriteLine($"Place the animal where?");
 
             Console.Write("> ");
+            // converting string to int
             int choice = Int32.Parse(Console.ReadLine());
 
             farm.GrazingFields[choice].AddResource(animal);
