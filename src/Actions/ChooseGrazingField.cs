@@ -22,6 +22,7 @@ namespace Trestlebridge.Actions
             // How can I output the type of animal chosen here?
             Console.WriteLine($"Place the animal where?");
 
+                // int32.parse changes string to integer, readline only does integer
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
 
