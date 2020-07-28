@@ -9,12 +9,9 @@ namespace Trestlebridge.Models
     public class Farm
     {
         public List<GrazingField> GrazingFields { get; } = new List<GrazingField>();
-<<<<<<< HEAD
         public List<ChickenHouse> ChickenHouses { get; } = new List<ChickenHouse>();
         
-=======
         public List<NaturalField> NaturalFields { get; } = new List<NaturalField>();
->>>>>>> master
 
         /*
             This method must specify the correct product interface of the
@@ -47,20 +44,18 @@ namespace Trestlebridge.Models
             GrazingFields.Add(field);
         }
 
-<<<<<<< HEAD
           public void AddChickenHouse (ChickenHouse house)
         {
             ChickenHouses.Add(house);
         }
-=======
-        public void AddNaturalFields(NaturalField field)
+
+         public void AddNaturalFields(NaturalField field)
         {
             NaturalFields.Add(field);
         }
 
         // this might display farm status and id
         // This might display farm status 
->>>>>>> master
 
         public override string ToString()
         {
@@ -72,11 +67,9 @@ namespace Trestlebridge.Models
 // This might be example code for displaying plow field and natural field
             GrazingFields.ForEach(gf => report.Append(gf));
 
-<<<<<<< HEAD
             ChickenHouses.ForEach(ch => report.Append(ch));
-=======
+            
             NaturalFields.ForEach(nf => report.Append(nf));
->>>>>>> master
 
             return report.ToString();
         }
