@@ -16,6 +16,8 @@ namespace Trestlebridge.Models
             This method must specify the correct product interface of the
             resource being purchased.
          */
+
+// This has the potential for merge conflicts. Communicate when you add your resource so that we do not have rouge code.
         public void PurchaseResource<T> (IResource resource, int index)
         {
             Console.WriteLine(typeof(T).ToString());
@@ -29,6 +31,7 @@ namespace Trestlebridge.Models
             }
         }
 
+// This is example code for adding plowing fields and natural fields. If it works.
         public void AddGrazingField (GrazingField field)
         {
             GrazingFields.Add(field);
@@ -43,6 +46,8 @@ namespace Trestlebridge.Models
         {
             StringBuilder report = new StringBuilder();
 
+
+// This might be example code for displaying plow field and natural field
             GrazingFields.ForEach(gf => report.Append(gf));
 
             ChickenHouses.ForEach(ch => report.Append(ch));
