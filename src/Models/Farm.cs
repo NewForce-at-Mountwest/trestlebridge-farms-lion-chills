@@ -72,9 +72,7 @@ namespace Trestlebridge.Models
 // This might be example code for displaying plow field and natural field
             GrazingFields.ForEach(gf => report.Append(gf));
             PlowedFields.ForEach(pf => report.Append(pf));
-
             ChickenHouses.ForEach(ch => report.Append(ch));
-            
             NaturalFields.ForEach(nf => report.Append(nf));
 
             return report.ToString();
