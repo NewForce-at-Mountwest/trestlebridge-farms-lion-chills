@@ -25,10 +25,13 @@ namespace Trestlebridge.Actions {
                     break;
 
                     case 3:
-                    farm.AddNaturalField(new NaturalField());
+                    Console.WriteLine("\n\n\n");
+                    Console.WriteLine("Success! Press return key to go back to main menu.");
+                    Console.ReadLine();
+                    farm.AddNaturalFields(new NaturalField());
                     break;
-                default:
-                    break;
+                // default:
+                //     break;
             }
         }
     }
