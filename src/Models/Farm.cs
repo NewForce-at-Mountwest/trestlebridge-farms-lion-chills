@@ -9,7 +9,7 @@ namespace Trestlebridge.Models
     public class Farm
     {
         public List<GrazingField> GrazingFields { get; } = new List<GrazingField>();
-        public List<ISeedProducing> PlowedFields {get; } = new List<ISeedProducing>();
+        public List<PlowedField> PlowedFields {get; } = new List<PlowedField>();
 
         /*
             This method must specify the correct product interface of the
@@ -42,6 +42,7 @@ namespace Trestlebridge.Models
             StringBuilder report = new StringBuilder();
 
             GrazingFields.ForEach(gf => report.Append(gf));
+            PlowedFields.ForEach(pf => report.Append(pf));
 
             return report.ToString();
         }
