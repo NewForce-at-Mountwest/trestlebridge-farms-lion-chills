@@ -19,6 +19,8 @@ namespace Trestlebridge.Actions {
             switch (Int32.Parse(choice))
             {
                 case 1:
+        //  this does not work.  Breaks when we attempt to put a cow in a field.  
+        //  Good example code for purchasing an animal.
                 // This does not work. Breaks when attempt to put cow in field. Good example code for purchasing an animal though.
                     ChooseGrazingField.CollectInput(farm, new Cow());
                     break;
