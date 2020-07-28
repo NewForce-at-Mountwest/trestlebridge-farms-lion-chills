@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Trestlebridge.Interfaces;
 
+// Don't forget to add the appropriate namespace in the new classes that we are creating. Make files in the right place to make it easy!
 namespace Trestlebridge.Models.Animals {
     public class Cow : IResource, IGrazing, IMeatProducing {
 

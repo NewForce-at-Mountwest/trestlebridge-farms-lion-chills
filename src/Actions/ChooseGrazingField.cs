@@ -24,6 +24,7 @@ namespace Trestlebridge.Actions
 
                 // int32.parse changes string to integer, readline only does integer
             Console.Write("> ");
+            // converting string to int
             int choice = Int32.Parse(Console.ReadLine());
 
             farm.GrazingFields[choice].AddResource(animal);
