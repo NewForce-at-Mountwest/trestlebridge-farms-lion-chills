@@ -27,6 +27,9 @@ namespace Trestlebridge.Actions
             switch (Int32.Parse(input))
             {
                 case 1:
+                    Console.WriteLine("\n\n\n");
+                    Console.WriteLine("Success! Press return key to go back to main menu.");
+                    Console.ReadLine();
                     farm.AddGrazingField(new GrazingField());
                     break;
                 case 2:
