@@ -22,7 +22,9 @@ namespace Trestlebridge.Actions
             // How can I output the type of animal chosen here?
             Console.WriteLine($"Place the animal where?");
 
+                // int32.parse changes string to integer, readline only does integer
             Console.Write("> ");
+            // converting string to int
             int choice = Int32.Parse(Console.ReadLine());
 
             farm.GrazingFields[choice].AddResource(animal);

@@ -2,12 +2,14 @@ using System;
 using System.Collections.Generic;
 using Trestlebridge.Interfaces;
 
+// Don't forget to add the appropriate namespace in the new classes that we are creating. Make files in the right place to make it easy!
 namespace Trestlebridge.Models.Animals {
     public class Cow : IResource, IGrazing, IMeatProducing {
 
         private Guid _id = Guid.NewGuid();
         private double _meatProduced = 18.25;
 
+                // shortens animal id
         private string _shortId {
             get {
                 return this._id.ToString().Substring(this._id.ToString().Length - 6);
@@ -26,6 +28,7 @@ namespace Trestlebridge.Models.Animals {
             return _meatProduced;
         }
 
+            // will come in handy when console writelining for a cow
         public override string ToString () {
             return $"Cow {this._shortId}. Mooo!";
         }
