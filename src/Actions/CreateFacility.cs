@@ -29,6 +29,9 @@ namespace Trestlebridge.Actions
                     farm.AddGrazingField(new GrazingField());
                     break;
                 case 4:
+                    Console.WriteLine("\n\n\n");
+                    Console.WriteLine("Success! Press return key to go back to main menu.");
+                    Console.ReadLine();
                     farm.AddChickenHouse(new ChickenHouse());
                     break;
                 default:
