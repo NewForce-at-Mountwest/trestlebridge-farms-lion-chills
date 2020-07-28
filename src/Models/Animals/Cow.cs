@@ -9,6 +9,7 @@ namespace Trestlebridge.Models.Animals {
         private Guid _id = Guid.NewGuid();
         private double _meatProduced = 18.25;
 
+                // shortens animal id
         private string _shortId {
             get {
                 return this._id.ToString().Substring(this._id.ToString().Length - 6);
@@ -27,6 +28,7 @@ namespace Trestlebridge.Models.Animals {
             return _meatProduced;
         }
 
+            // will come in handy when console writelining for a cow
         public override string ToString () {
             return $"Cow {this._shortId}. Mooo!";
         }
