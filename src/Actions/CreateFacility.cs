@@ -3,6 +3,7 @@ using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
 using Trestlebridge.Models.Facilities;
 
+<<<<<<< HEAD
 namespace Trestlebridge.Actions
 {
     public class CreateFacility
@@ -12,6 +13,14 @@ namespace Trestlebridge.Actions
             Console.WriteLine("1. Grazing field");
             Console.WriteLine("2. Plowed field");
             Console.WriteLine("4. Chicken House");
+=======
+namespace Trestlebridge.Actions {
+    public class CreateFacility {
+        public static void CollectInput (Farm farm) {
+            Console.WriteLine ("1. Grazing field");
+            Console.WriteLine ("2. Plowed field");
+            Console.WriteLine ("3. Natural Field");
+>>>>>>> master
 
             Console.WriteLine();
             Console.WriteLine("Choose what you want to create");
@@ -37,8 +46,19 @@ namespace Trestlebridge.Actions
                 default:
                     break;
 
+<<<<<<< HEAD
 
 
+=======
+                    case 3:
+                    Console.WriteLine("\n\n\n");
+                    Console.WriteLine("Success! Press return key to go back to main menu.");
+                    Console.ReadLine();
+                    farm.AddNaturalFields(new NaturalField());
+                    break;
+                // default:
+                //     break;
+>>>>>>> master
             }
         }
     }
