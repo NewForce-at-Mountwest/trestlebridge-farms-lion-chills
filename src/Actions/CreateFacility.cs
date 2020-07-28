@@ -29,6 +29,12 @@ namespace Trestlebridge.Actions
                 case 1:
                     farm.AddGrazingField(new GrazingField());
                     break;
+                case 2:
+                    Console.WriteLine("\n\n\n");
+                    Console.WriteLine("Success! Press return key to go back to main menu.");
+                    Console.ReadLine();
+                    farm.AddPlowedField(new PlowedField());
+                    break;
                 case 4:
                     Console.WriteLine("\n\n\n");
                     Console.WriteLine("Success! Press return key to go back to main menu.");

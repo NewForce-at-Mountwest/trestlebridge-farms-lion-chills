@@ -9,6 +9,7 @@ namespace Trestlebridge.Models
     public class Farm
     {
         public List<GrazingField> GrazingFields { get; } = new List<GrazingField>();
+        public List<PlowedField> PlowedFields {get; } = new List<PlowedField>();
         public List<ChickenHouse> ChickenHouses { get; } = new List<ChickenHouse>();
         
         public List<NaturalField> NaturalFields { get; } = new List<NaturalField>();
@@ -43,6 +44,10 @@ namespace Trestlebridge.Models
         {
             GrazingFields.Add(field);
         }
+        public void AddPlowedField (PlowedField field)
+        {
+            PlowedFields.Add(field);
+        }
 
           public void AddChickenHouse (ChickenHouse house)
         {
@@ -66,6 +71,7 @@ namespace Trestlebridge.Models
 
 // This might be example code for displaying plow field and natural field
             GrazingFields.ForEach(gf => report.Append(gf));
+            PlowedFields.ForEach(pf => report.Append(pf));
 
             ChickenHouses.ForEach(ch => report.Append(ch));
             
