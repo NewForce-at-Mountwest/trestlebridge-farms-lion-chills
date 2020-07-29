@@ -7,23 +7,23 @@ using Trestlebridge.Interfaces;
 namespace Trestlebridge.Models.Facilities
 {
 
-    public class NaturalField : IFacility<ISeedProducing>
+    public class NaturalField : IFacility<ICompostProducing>
     {
 
         private Guid _id = Guid.NewGuid();
         public double Capacity => throw new NotImplementedException();
 
-        private List<ISeedProducing> _seeds = new List<ISeedProducing>();
+        private List<ICompostProducing> _seeds = new List<ICompostProducing>();
 
             // add the seeds to the field
-            public void AddResource(ISeedProducing resource)
+            public void AddResource(ICompostProducing resource)
         {
-            throw new NotImplementedException();
+            _seeds.Add(resource);
         }
 
-        public void AddResource(List<ISeedProducing> resources)
+        public void AddResource(List<ICompostProducing> resources)
         {
-            throw new NotImplementedException();
+            // _seeds.Add(resources);
         }
 
         public override string ToString()

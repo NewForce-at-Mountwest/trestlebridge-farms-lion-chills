@@ -19,13 +19,13 @@ namespace Trestlebridge.Actions
 
             Console.WriteLine();
 
-            // How can I output the type of animal chosen here?
-            Console.WriteLine($"Place the seed where?");
-
+            // IResource.Type
+            Console.WriteLine($"Where should we place the seed?");
+            
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
 
-            farm.PlowedFields[choice].AddResource(seed);
+            farm.PlowedFields[choice - 1].AddResource(seed);
 
         }
     }
