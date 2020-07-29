@@ -8,16 +8,18 @@ namespace Trestlebridge.Models.Plants
         private int _seedsProduced = 40;
         public string Type { get; } = "Sesame";
 
-        public void AddResource(ISeedProducing seed)
+        public double Compost()
         {
             throw new NotImplementedException();
         }
 
-        public double Harvest () {
+        public double Harvest()
+        {
             return _seedsProduced;
         }
 
-        public override string ToString () {
+        public override string ToString()
+        {
             return $"Sesame. Yum!";
         }
     }
