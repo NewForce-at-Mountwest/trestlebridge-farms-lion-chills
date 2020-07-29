@@ -3,9 +3,13 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Plants
 {
+    // plowed
+    // seed
+    // 520 seeds
     public class Sesame : IResource, ISeedProducing
     {
-        private int _seedsProduced = 40;
+         private Guid _id = Guid.NewGuid();
+        private int _seedsProduced = 520;
         public string Type { get; } = "Sesame";
 
         public void AddResource(ISeedProducing seed)
