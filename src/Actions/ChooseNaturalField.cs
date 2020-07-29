@@ -24,7 +24,7 @@ namespace Trestlebridge.Actions
                 int choice = Int32.Parse(Console.ReadLine());
 
                 //Adds the seed to natural field
-            farm.NaturalFields[choice].AddResource(seed);
+            farm.NaturalFields[choice - 1].AddResource(seed);
             }
         }
 

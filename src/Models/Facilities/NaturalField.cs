@@ -9,9 +9,19 @@ namespace Trestlebridge.Models.Facilities
 
     public class NaturalField : IFacility<ISeedProducing>
     {
-
+        private int _capacity = 60;
         private Guid _id = Guid.NewGuid();
-        public double Capacity => throw new NotImplementedException();
+        public double Capacity {
+            get{
+                return _capacity;
+            }
+        }
+
+          public int GetTotal()
+        {
+            throw new NotImplementedException();
+        }
+          
 
         private List<ISeedProducing> _seeds = new List<ISeedProducing>();
 
