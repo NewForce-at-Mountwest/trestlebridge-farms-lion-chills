@@ -7,8 +7,13 @@ using Trestlebridge.Models.Facilities;
 namespace Trestlebridge.Actions {
     public class PurchaseStock {
         public static void CollectInput (Farm farm) {
-            Console.WriteLine ("1. Cow");
-            Console.WriteLine ("2. Ostrich");
+            Console.WriteLine ("1. Chicken");
+            Console.WriteLine ("2. Cow");
+            Console.WriteLine ("3. Duck");
+            Console.WriteLine ("4. Goat");
+            Console.WriteLine ("5. Ostrich");
+            Console.WriteLine ("6. Pig");
+            Console.WriteLine ("7. Sheep");
 
             Console.WriteLine ();
             Console.WriteLine ("What are you buying today?");
@@ -18,9 +23,7 @@ namespace Trestlebridge.Actions {
 
             switch (Int32.Parse(choice))
             {
-                case 1:
-        //  this does not work.  Breaks when we attempt to put a cow in a field.  
-        //  Good example code for purchasing an animal.
+                case 2:
                 // This does not work. Breaks when attempt to put cow in field. Good example code for purchasing an animal though.
                     ChooseGrazingField.CollectInput(farm, new Cow());
                     break;
