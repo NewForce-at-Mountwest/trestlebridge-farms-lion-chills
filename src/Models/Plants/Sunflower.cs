@@ -3,7 +3,7 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Plants
 {
-    public class Sunflower : IResource, ISeedProducing
+    public class Sunflower : IResource, ISeedProducing, ICompostProducing
     {
 
         private Guid _id = Guid.NewGuid();

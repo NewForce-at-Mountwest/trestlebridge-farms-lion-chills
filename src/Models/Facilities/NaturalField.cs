@@ -7,31 +7,33 @@ using Trestlebridge.Interfaces;
 namespace Trestlebridge.Models.Facilities
 {
 
-    public class NaturalField : IFacility<ISeedProducing>
+    public class NaturalField : IFacility<ICompostProducing>
     {
         private int _capacity = 60;
         private Guid _id = Guid.NewGuid();
-        public double Capacity {
-            get{
+        public double Capacity
+        {
+            get
+            {
                 return _capacity;
             }
         }
 
-          public int GetTotal()
-        {
-            throw new NotImplementedException();
-        }
-          
-
-        private List<ISeedProducing> _seeds = new List<ISeedProducing>();
-
-            // add the seeds to the field
-            public void AddResource(ISeedProducing resource)
+        public int GetTotal()
         {
             throw new NotImplementedException();
         }
 
-        public void AddResource(List<ISeedProducing> resources)
+
+        private List<ICompostProducing> _seeds = new List<ICompostProducing>();
+
+        // add the seeds to the field
+        public void AddResource(ICompostProducing seed)
+        {
+            _seeds.Add(seed);
+        }
+
+        public void AddResource(List<ICompostProducing> resources)
         {
             throw new NotImplementedException();
         }
@@ -46,6 +48,7 @@ namespace Trestlebridge.Models.Facilities
 
             return output.ToString();
         }
+
 
     }
 }

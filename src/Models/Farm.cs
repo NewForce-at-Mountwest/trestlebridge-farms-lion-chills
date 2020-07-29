@@ -23,16 +23,16 @@ namespace Trestlebridge.Models
                     GrazingFields[index].AddResource((IGrazing)resource);
                     break;
 
-                case"Sesame":
-                    NaturalFields[index].AddResource((ISeedProducing)resource);
-                    break;
+                // case"Sesame":
+                //     NaturalFields[index].AddResource((ISeedProducing)resource);
+                //     break;
 
                 case "Sunflower":
-                    NaturalFields[index].AddResource((ISeedProducing)resource);
+                    NaturalFields[index].AddResource((ICompostProducing)resource);
                     break;
 
                 case "Wildflower":
-                    NaturalFields[index].AddResource((ISeedProducing)resource);
+                    NaturalFields[index].AddResource((ICompostProducing)resource);
                     break;
 
 
