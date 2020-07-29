@@ -10,19 +10,9 @@ namespace Trestlebridge.Models
     {
         public List<GrazingField> GrazingFields { get; } = new List<GrazingField>();
         public List<PlowedField> PlowedFields {get; } = new List<PlowedField>();
-        public List<ChickenHouse> ChickenHouses { get; } = new List<ChickenHouse>();
-        
         public List<NaturalField> NaturalFields { get; } = new List<NaturalField>();
-
-        /*
-            This method must specify the correct product interface of the
-            resource being purchased.
-         */
-
-        //  this has the potential for merge conflicts. Communicate
-        // when you add your resource.
-        // public void PurchaseResource<T>(IResource resource, int index)
-// This has the potential for merge conflicts. Communicate when you add your resource so that we do not have rouge code.
+        public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
+        public List<ChickenHouse> ChickenHouses { get; } = new List<ChickenHouse>();
         public void PurchaseResource<T> (IResource resource, int index)
         {
             Console.WriteLine(typeof(T).ToString());
@@ -36,10 +26,6 @@ namespace Trestlebridge.Models
                     break;
             }
         }
-        // example code for adding plowing fields and natural fields.  If it works.
-        // public void AddGrazingField(GrazingField field)
-
-// This is example code for adding plowing fields and natural fields. If it works.
         public void AddGrazingField (GrazingField field)
         {
             GrazingFields.Add(field);
@@ -58,26 +44,28 @@ namespace Trestlebridge.Models
         {
             NaturalFields.Add(field);
         }
-
-        // this might display farm status and id
-        // This might display farm status 
+         public void AddDuckHouse (DuckHouse house)
+        {
+            DuckHouses.Add(house);
+        }
 
         public override string ToString()
         {
             StringBuilder report = new StringBuilder();
 
-            // this might be example code for displaying plow field and natural field.
-
-
-// This might be example code for displaying plow field and natural field
             GrazingFields.ForEach(gf => report.Append(gf));
+
             PlowedFields.ForEach(pf => report.Append(pf));
 
             ChickenHouses.ForEach(ch => report.Append(ch));
             
             NaturalFields.ForEach(nf => report.Append(nf));
 
+            DuckHouses.ForEach(dh => report.Append(dh));
+
             return report.ToString();
         }
+
+        
     }
 }
