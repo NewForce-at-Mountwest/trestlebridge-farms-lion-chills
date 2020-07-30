@@ -4,41 +4,37 @@ using System.Collections.Generic;
 using Trestlebridge.Interfaces;
 
 
-namespace Trestlebridge.Models.Facilities {
+namespace Trestlebridge.Models.Facilities
+{
     public class NaturalField : IFacility<ICompostProducing>
     {
-        private int _capacity = 0;
+        private int _capacity = 2;
         private Guid _id = Guid.NewGuid();
 
         private List<ICompostProducing> plants = new List<ICompostProducing>();
 
-        public double Capacity {
-            get {
+        public double Capacity 
+        {
+            get
+            {
                 return _capacity;
             }
         }
 
-        // public void AddResource(ICompostProducing plants);
         public void AddResource(ICompostProducing resource)
         {
             plants.Add(resource);
         }
 
-        public void AddResource(List<ICompostProducing> resources)
+        public void AddResources(List<ICompostProducing> resources)
         {
             plants.AddRange(resources);
         }
 
-        public int GetTotal()
+        public double GetTotal()
         {
             return plants.Count;
         }
-
-        // if(this.plants.Count[i] >= Capacity)
-        // {
-        //     Console.WriteLine("This field is full.")
-        //     Console.ReadLine();
-        // }
 
         public override string ToString()
         {
@@ -50,5 +46,12 @@ namespace Trestlebridge.Models.Facilities {
 
             return output.ToString();
         }
+
     }
+
 }
+
+
+
+
+    

@@ -21,7 +21,10 @@ namespace Trestlebridge.Models.Facilities
                 return _capacity;
             }
         }
-          public void AddResource(ISeedProducing resource)
+
+        public List<ISeedProducing> resources { get; set; }
+
+        public void AddResource(ISeedProducing resource)
         {
              _seeds.Add(resource);
         }
@@ -29,7 +32,12 @@ namespace Trestlebridge.Models.Facilities
         {
             throw new NotImplementedException();
         }
-        
+
+        public void AddResources(List<ISeedProducing> resources)
+        {
+            throw new NotImplementedException();
+        }
+
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();

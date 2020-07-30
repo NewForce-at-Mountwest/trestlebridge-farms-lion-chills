@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Threading;
 using Trestlebridge.Interfaces;
 using Trestlebridge.Models;
 using Trestlebridge.Models.Animals;
@@ -15,10 +16,10 @@ namespace Trestlebridge.Actions
             //Prints each available natural field 
             for (int i = 0; i < farm.NaturalFields.Count; i++)
             {
-                if(farm.NaturalFields[i].GetTotal() < farm.NaturalFields[i].Capacity){
-               Console.WriteLine($"{i + 1}. Natural Field ({farm.NaturalFields[i].GetTotal()} plants)");
+                {
+                    Console.WriteLine($"{i + 1}. Natural Field");
                 }
-                
+
             }
 
             Console.WriteLine();
@@ -28,8 +29,26 @@ namespace Trestlebridge.Actions
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
 
+            if (farm.NaturalFields[choice -1].GetTotal() < farm.NaturalFields[choice - 1].Capacity)
+            {
+                farm.NaturalFields[choice - 1].AddResource(plant);
+            }
+                else
+                {
+                    Console.WriteLine("This field is full.");
+                    Thread.Sleep(2000);
+                }
+
+
             //Adds the plant/seed to the selected natural field
-            farm.NaturalFields[choice-1].AddResource(plant);
+            // if (farm.NaturalFields[choice - 1].GetTotal == farm.NaturalFields[choice - 1].Capacity)
+            // {
+            //     farm.NaturalFields[choice - 1].AddResource(plant);
+            // }
+            //     else
+            //     {
+            //         Console.WriteLine("This field is full.");
+            //     }
 
             /*
                 Couldn't get this to work. Can you?
