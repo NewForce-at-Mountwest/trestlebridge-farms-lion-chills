@@ -18,6 +18,8 @@ namespace Trestlebridge.Models.Facilities {
             }
         }
 
+        public List<IMeatProducing> resources { get; set; }
+
         public void AddResource (IMeatProducing animal)
         {
             // TODO: implement this...
@@ -27,6 +29,11 @@ namespace Trestlebridge.Models.Facilities {
         public void AddResource (List<IMeatProducing> animals) 
         {
             // TODO: implement this...
+            throw new NotImplementedException();
+        }
+
+        public void AddResources(List<IMeatProducing> resources)
+        {
             throw new NotImplementedException();
         }
 

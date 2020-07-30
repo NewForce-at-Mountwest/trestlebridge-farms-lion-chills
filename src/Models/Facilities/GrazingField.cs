@@ -7,7 +7,7 @@ using Trestlebridge.Interfaces;
 namespace Trestlebridge.Models.Facilities {
     public class GrazingField : IFacility<IGrazing>
     {
-        private int _capacity = 50;
+        private int _capacity = 2;
         private Guid _id = Guid.NewGuid();
 
         private List<IGrazing> _animals = new List<IGrazing>();
@@ -17,17 +17,22 @@ namespace Trestlebridge.Models.Facilities {
                 return _capacity;
             }
         }
-
-        public void AddResource (IGrazing animal)
+        public void AddResource (IGrazing resource)
         {
-            // TODO: implement this...
-            throw new NotImplementedException();
+            if(this._animals.Count >= _capacity )
+            {
+                Console.WriteLine("This field is full. Please select a different field.");
+                Console.ReadLine();
+            }
+            else
+            {
+                _animals.Add(resource);
+            }
+           
         }
-
-        public void AddResource (List<IGrazing> animals) 
+        public void AddResources(List<IGrazing> resources)
         {
-            // TODO: implement this...
-            throw new NotImplementedException();
+            _animals.AddRange(resources);
         }
 
         public override string ToString()
