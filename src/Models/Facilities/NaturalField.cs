@@ -18,6 +18,7 @@ namespace Trestlebridge.Models.Facilities {
             }
         }
 
+        // public void AddResource(ICompostProducing plants);
         public void AddResource(ICompostProducing resource)
         {
             plants.Add(resource);
@@ -32,6 +33,12 @@ namespace Trestlebridge.Models.Facilities {
         {
             return plants.Count;
         }
+
+        // if(this.plants.Count[i] >= Capacity)
+        // {
+        //     Console.WriteLine("This field is full.")
+        //     Console.ReadLine();
+        // }
 
         public override string ToString()
         {

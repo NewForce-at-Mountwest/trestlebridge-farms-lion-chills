@@ -23,7 +23,7 @@ namespace Trestlebridge.Actions
 
             Console.WriteLine();
 
-            Console.WriteLine($"Where would you like to place the seed?");
+            Console.WriteLine($"Choose a field to plant your seed in?");
 
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
