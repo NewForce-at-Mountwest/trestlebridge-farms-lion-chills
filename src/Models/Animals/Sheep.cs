@@ -4,10 +4,10 @@ using Trestlebridge.Interfaces;
 
 // Don't forget to add the appropriate namespace in the new classes that we are creating. Make files in the right place to make it easy!
 namespace Trestlebridge.Models.Animals {
-    public class Cow : IResource, IGrazing, IMeatProducing {
+    public class Sheep : IResource, IGrazing, IMeatProducing {
 
         private Guid _id = Guid.NewGuid();
-        private double _meatProduced = 18.25;
+        private double _meatProduced = 5.0;
         private string _shortId {
             get {
                 return this._id.ToString().Substring(this._id.ToString().Length - 6);
@@ -15,11 +15,11 @@ namespace Trestlebridge.Models.Animals {
         }
 
         public double GrassPerDay { get; set; } = 5.4;
-        public string Type { get; } = "Cow";
+        public string Type { get; } = "Sheep";
 
         // Methods
         public void Graze () {
-            Console.WriteLine($"Cow {this._shortId} just ate {this.GrassPerDay}kg of grass");
+            Console.WriteLine($"Sheep {this._shortId} just ate {this.GrassPerDay}kg of grass");
         }
 
         public double Butcher () {
@@ -28,7 +28,7 @@ namespace Trestlebridge.Models.Animals {
 
             // will come in handy when console writelining for a cow
         public override string ToString () {
-            return $"Cow {this._shortId}. Mooo!";
+            return $"Sheep {this._shortId}. Baaaa!";
         }
     }
 }

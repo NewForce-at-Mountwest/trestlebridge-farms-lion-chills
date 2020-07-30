@@ -18,12 +18,19 @@ namespace Trestlebridge.Models.Facilities {
             }
         }
 
+        public List<IMeatProducing> resources { get; set; }
+
         public void AddResource(IMeatProducing resource)
         {
             throw new NotImplementedException();
         }
 
         public void AddResource(List<IMeatProducing> resources)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddResources(List<IMeatProducing> resources)
         {
             throw new NotImplementedException();
         }

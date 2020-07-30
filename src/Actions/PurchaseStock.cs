@@ -12,8 +12,11 @@ namespace Trestlebridge.Actions
         {
             Console.WriteLine("1. Chicken");
             Console.WriteLine("2. Cow");
-            Console.WriteLine("3. Duck");
-            Console.WriteLine("4. Ostrich");
+            Console.WriteLine("2. Duck");
+            Console.WriteLine("4. Goat");
+            Console.WriteLine("5. Ostrich");
+            Console.WriteLine("6. Pig");
+            Console.WriteLine("7. Sheep");
 
 
 
@@ -25,29 +28,26 @@ namespace Trestlebridge.Actions
 
             switch (Int32.Parse(choice))
             {
-                case 2:
-                    //  this does not work.  Breaks when we attempt to put a cow in a field.  
-                    //  Good example code for purchasing an animal.
-                    // This does not work. Breaks when attempt to put cow in field. Good example code for purchasing an animal though.
-                    ChooseGrazingField.CollectInput(farm, new Cow());
-                    break;
                 case 1:
-                    //  this does not work.  Breaks when we attempt to put a Chicken in a field.  
-                    //  Good example code for purchasing an animal.
-                    // This does not work. Breaks when attempt to put Chicken in field. Good example code for purchasing an animal though.
                     ChooseChickenHouse.CollectInput(farm, new Chicken());
                     break;
+                case 2:
+                    ChooseGrazingField.CollectInput(farm, new Cow());
+                    break;
                 case 3:
-                    //  this does not work.  Breaks when we attempt to put a duck in a field.  
-                    //  Good example code for purchasing an animal.
-                    // This does not work. Breaks when attempt to put duck in field. Good example code for purchasing an animal though.
                     ChooseDuckHouse.CollectInput(farm, new Duck());
                     break;
                 case 4:
-                    //  this does not work.  Breaks when we attempt to put a duck in a field.  
-                    //  Good example code for purchasing an animal.
-                    // This does not work. Breaks when attempt to put duck in field. Good example code for purchasing an animal though.
+                    ChooseGrazingField.CollectInput(farm, new Goat());
+                    break;
+                case 5:
                     ChooseGrazingField.CollectInput(farm, new Ostrich());
+                    break;
+                case 6:
+                    ChooseGrazingField.CollectInput(farm, new Pig());
+                    break;
+                case 7:
+                    ChooseGrazingField.CollectInput(farm, new Sheep());
                     break;
                 default:
                     break;
