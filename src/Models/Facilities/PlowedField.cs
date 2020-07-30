@@ -23,6 +23,10 @@ namespace Trestlebridge.Models.Facilities
         }
         public void AddResource(ISeedProducing resource)
         {
+            if(this._seeds.Count >= _capacity){
+                Console.WriteLine("This field is full. Please select a different field. Press return to go back to main menu.");
+                Console.ReadLine();
+            }
             _seeds.Add(resource);
         }
         public void AddResources(List<ISeedProducing> resources)
