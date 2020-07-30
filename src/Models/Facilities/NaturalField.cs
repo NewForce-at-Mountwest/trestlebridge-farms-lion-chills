@@ -24,10 +24,11 @@ namespace Trestlebridge.Models.Facilities
         {
             _seeds.Add(resource);
         }
-        public void AddResource(List<ICompostProducing> resources)
+        public void AddResources(List<ICompostProducing> resources)
         {
-            // _seeds.Add(resources);
+            throw new NotImplementedException();
         }
+
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();
