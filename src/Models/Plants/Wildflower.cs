@@ -3,6 +3,8 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Plants
 {
+    // wrong type --- try/catch
+    // field is full --- if/else
     // natural field
     // compost
     // amount 30.3kg
@@ -20,12 +22,13 @@ namespace Trestlebridge.Models.Plants
         public string Type { get; } = "Wildflower";
 
           public override string ToString () {
+            //name specific wildflower here IResource.Type?
             return $"Wildflower. So pretty!";
         }
 
         public double Compost()
         {
-            throw new NotImplementedException();
+            return 30.3;
         }
     }
 }

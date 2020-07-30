@@ -12,11 +12,6 @@ namespace Trestlebridge.Models.Plants
         private int _seedsProduced = 520;
         public string Type { get; } = "Sesame";
 
-        public void AddResource(ISeedProducing seed)
-        {
-            throw new NotImplementedException();
-        }
-
         public double Harvest () {
             return _seedsProduced;
         }

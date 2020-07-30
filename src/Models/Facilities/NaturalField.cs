@@ -11,6 +11,7 @@ namespace Trestlebridge.Models.Facilities
     {
 
         private Guid _id = Guid.NewGuid();
+        private int _capacity = 60;
         public double Capacity => throw new NotImplementedException();
 
         private List<ICompostProducing> _seeds = new List<ICompostProducing>();
