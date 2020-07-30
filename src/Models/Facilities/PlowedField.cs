@@ -9,7 +9,7 @@ namespace Trestlebridge.Models.Facilities
     public class PlowedField : IFacility<ISeedProducing>
     {
         private int _capacity = 65;
-        // 13 rows of plants, 5 plants per row = 65?
+        // 13 rows of plants, 5 plants per row = 65
         private Guid _id = Guid.NewGuid();
 
         private List<ISeedProducing> _seeds = new List<ISeedProducing>();

@@ -16,8 +16,9 @@ namespace Trestlebridge.Models.Plants
             return _seedsProduced;
         }
 
-        public override string ToString () {
-            return $"Sesame. Yum!";
+        public override string ToString()
+        {
+            return $"Sesame as an oil or a garnish on your salad, Sesame is delicious!!";
         }
     }
 }

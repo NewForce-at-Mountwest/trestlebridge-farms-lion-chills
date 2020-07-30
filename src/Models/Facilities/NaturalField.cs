@@ -9,24 +9,25 @@ namespace Trestlebridge.Models.Facilities
 
     public class NaturalField : IFacility<ICompostProducing>
     {
-
-        private Guid _id = Guid.NewGuid();
         private int _capacity = 60;
-        public double Capacity => throw new NotImplementedException();
-
+        // 10 rows of plants, 6 plants per row = 60
+        private Guid _id = Guid.NewGuid();
         private List<ICompostProducing> _seeds = new List<ICompostProducing>();
-
-            // add the seeds to the field
-            public void AddResource(ICompostProducing resource)
+        public double Capacity
+        {
+            get
+            {
+                return _capacity;
+            }
+        }
+        public void AddResource(ICompostProducing resource)
         {
             _seeds.Add(resource);
         }
-
         public void AddResource(List<ICompostProducing> resources)
         {
             // _seeds.Add(resources);
         }
-
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();
@@ -37,6 +38,5 @@ namespace Trestlebridge.Models.Facilities
 
             return output.ToString();
         }
-
     }
 }
