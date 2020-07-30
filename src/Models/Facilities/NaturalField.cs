@@ -11,7 +11,10 @@ namespace Trestlebridge.Models.Facilities
     {
 
         private Guid _id = Guid.NewGuid();
-        public double Capacity => throw new NotImplementedException();
+        public double Capacity {get; set;}
+
+        public List<ISeedProducing> resources { get; set; }
+
 
         private List<ISeedProducing> _seeds = new List<ISeedProducing>();
 
@@ -37,5 +40,9 @@ namespace Trestlebridge.Models.Facilities
             return output.ToString();
         }
 
+        public void AddResources(List<ISeedProducing> resources)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
