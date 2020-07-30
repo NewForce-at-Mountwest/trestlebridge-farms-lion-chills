@@ -38,5 +38,10 @@ namespace Trestlebridge.Models.Facilities {
 
             return output.ToString();
         }
+
+        internal void AddResource(IGrazing animal)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
