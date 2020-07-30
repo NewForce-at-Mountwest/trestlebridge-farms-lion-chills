@@ -20,17 +20,20 @@ namespace Trestlebridge.Models.Facilities {
 
         public List<IMeatProducing> resources { get; set; }
 
-        public void AddResource(IMeatProducing resource)
+        public void AddResource (IMeatProducing animal)
         {
-            throw new NotImplementedException();
-        }
-
-        public void AddResource(List<IMeatProducing> resources)
-        {
-            throw new NotImplementedException();
+           
+                _animals.Add(animal);
+            
+            
         }
 
         public void AddResources(List<IMeatProducing> resources)
+        {
+            throw new NotImplementedException();
+        }
+
+        public double Butcher()
         {
             throw new NotImplementedException();
         }
@@ -45,5 +48,7 @@ namespace Trestlebridge.Models.Facilities {
 
             return output.ToString();
         }
+
+       
     }
 }

@@ -5,7 +5,7 @@ using Trestlebridge.Interfaces;
 
 
 namespace Trestlebridge.Models.Facilities {
-    public class ChickenHouse : IFacility<IMeatProducing>, IMeatProducing
+    public class ChickenHouse : IFacility<IMeatProducing>
     {
         private int _capacity = 50;
         private Guid _id = Guid.NewGuid();
@@ -22,14 +22,10 @@ namespace Trestlebridge.Models.Facilities {
 
         public void AddResource (IMeatProducing animal)
         {
-            // TODO: implement this...
-            throw new NotImplementedException();
-        }
-
-        public void AddResource (List<IMeatProducing> animals) 
-        {
-            // TODO: implement this...
-            throw new NotImplementedException();
+           
+                _animals.Add(animal);
+            
+            
         }
 
         public void AddResources(List<IMeatProducing> resources)
@@ -47,10 +43,12 @@ namespace Trestlebridge.Models.Facilities {
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
 
-            output.Append($"Chicken house {shortId} has {this._animals.Count} animals\n");
+            output.Append($"Chicken House {shortId} has {this._animals.Count} animals\n");
             this._animals.ForEach(a => output.Append($"   {a}\n"));
 
             return output.ToString();
         }
+
+       
     }
 }
