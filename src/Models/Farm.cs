@@ -26,7 +26,7 @@ namespace Trestlebridge.Models
                     GrazingFields[index].AddResource((IGrazing)resource);
                     break;
 
-                case"Sesame":
+                case "Sesame":
                     NaturalFields[index].AddResource((ICompostProducing)resource);
                     break;
 
@@ -88,9 +88,7 @@ namespace Trestlebridge.Models
             GrazingFields.ForEach(gf => report.Append(gf));
 
             PlowedFields.ForEach(pf => report.Append(pf));
-
             ChickenHouses.ForEach(ch => report.Append(ch));
-
             NaturalFields.ForEach(nf => report.Append(nf));
 
             DuckHouses.ForEach(dh => report.Append(dh));

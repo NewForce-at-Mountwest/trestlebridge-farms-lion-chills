@@ -5,27 +5,38 @@ using Trestlebridge.Models.Animals;
 using Trestlebridge.Models.Facilities;
 using Trestlebridge.Actions;
 
-namespace Trestlebridge.Actions {
-    public class PurchaseStock {
-        public static void CollectInput (Farm farm) {
-            
-            Console.WriteLine ("2. Cow");
-           
-            Console.WriteLine ("4. Goat");
-            Console.WriteLine ("5. Ostrich");
-            Console.WriteLine ("6. Pig");
-            Console.WriteLine ("7. Sheep");
+namespace Trestlebridge.Actions
+{
+    public class PurchaseStock
+    {
+        public static void CollectInput(Farm farm)
+        {
+            Console.WriteLine("1. Chicken");
+            Console.WriteLine("2. Cow");
+            Console.WriteLine("3. Duck");
+            Console.WriteLine("4. Goat");
+            Console.WriteLine("5. Ostrich");
+            Console.WriteLine("6. Pig");
+            Console.WriteLine("7. Sheep");
 
-            Console.WriteLine ();
-            Console.WriteLine ("What are you buying today?");
 
-            Console.Write ("> ");
-            string choice = Console.ReadLine ();
+
+            Console.WriteLine();
+            Console.WriteLine("What are you buying today?");
+
+            Console.Write("> ");
+            string choice = Console.ReadLine();
 
             switch (Int32.Parse(choice))
             {
+                case 1:
+                    ChooseChickenHouse.CollectInput(farm, new Chicken());
+                    break;
                 case 2:
                     ChooseGrazingField.CollectInput(farm, new Cow());
+                    break;
+                case 3:
+                    ChooseDuckHouse.CollectInput(farm, new Duck());
                     break;
                 case 4:
                     ChooseGrazingField.CollectInput(farm, new Goat());
