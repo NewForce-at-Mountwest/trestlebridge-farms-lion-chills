@@ -12,7 +12,7 @@ namespace Trestlebridge.Actions
         {
             Console.WriteLine("1. Chicken");
             Console.WriteLine("2. Cow");
-            Console.WriteLine("2. Duck");
+            Console.WriteLine("3. Duck");
             Console.WriteLine("4. Goat");
             Console.WriteLine("5. Ostrich");
             Console.WriteLine("6. Pig");
