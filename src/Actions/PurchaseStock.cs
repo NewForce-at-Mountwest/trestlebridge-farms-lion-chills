@@ -24,6 +24,7 @@ namespace Trestlebridge.Actions {
                 // This does not work. Breaks when attempt to put cow in field. Good example code for purchasing an animal though.
                     ChooseGrazingField.CollectInput(farm, new Cow());
                     break;
+                   
                 default:
                     break;
             }

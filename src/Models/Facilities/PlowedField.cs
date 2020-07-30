@@ -23,7 +23,7 @@ namespace Trestlebridge.Models.Facilities
         }
           public void AddResource(ISeedProducing resource)
         {
-            throw new NotImplementedException();
+             _seeds.Add(resource);
         }
         public void AddResource(List<ISeedProducing> resources)
         {

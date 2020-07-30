@@ -8,11 +8,6 @@ namespace Trestlebridge.Models.Plants
         private int _seedsProduced = 40;
         public string Type { get; } = "Sesame";
 
-        public double Compost()
-        {
-            throw new NotImplementedException();
-        }
-
         public double Harvest()
         {
             return _seedsProduced;
@@ -20,7 +15,7 @@ namespace Trestlebridge.Models.Plants
 
         public override string ToString()
         {
-            return $"Sesame. Yum!";
+            return $"Sesame as an oil or a garnish on your salad, Sesame is delicious!!";
         }
     }
 }
