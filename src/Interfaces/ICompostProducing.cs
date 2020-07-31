@@ -2,9 +2,8 @@ using System.Collections.Generic;
 
 namespace Trestlebridge.Interfaces
 {
-    public interface ISeedProducing
+    public interface ICompostProducing
     {
-        double Harvest ();
-
+        double Compost ();
     }
 }

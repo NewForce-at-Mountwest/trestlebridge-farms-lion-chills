@@ -41,10 +41,13 @@ namespace Trestlebridge.Actions
                     farm.AddPlowedField(new PlowedField());
                     break;
                 case 3:
-                    Console.WriteLine("\n\n\n");
-                    Console.WriteLine("Success! Press return key to go back to main menu.");
-                    Console.ReadLine();
                     farm.AddNaturalFields(new NaturalField());
+                    Console.WriteLine("\n\n\n");
+                    Console.WriteLine("Success! You have created a natural field!");
+                    Console.WriteLine("Press return key to go back to main menu.");
+                    Console.Write(">");
+                    Console.ReadLine();
+                    
                     break;
                 case 4:
                     Console.WriteLine("\n\n\n");

@@ -6,27 +6,34 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Facilities
 {
-
-    public class NaturalField : IFacility<ISeedProducing>
+    public class NaturalField : IFacility<ICompostProducing>
     {
-
+        private int _capacity = 2;
         private Guid _id = Guid.NewGuid();
-        public double Capacity {get; set;}
 
-        public List<ISeedProducing> resources { get; set; }
+        private List<ICompostProducing> plants = new List<ICompostProducing>();
 
-
-        private List<ISeedProducing> _seeds = new List<ISeedProducing>();
-
-            // add the seeds to the field
-            public void AddResource(ISeedProducing resource)
+        public double Capacity
         {
-            throw new NotImplementedException();
+            get
+            {
+                return _capacity;
+            }
         }
 
-        public void AddResource(List<ISeedProducing> resources)
+        public void AddResource(ICompostProducing resource)
         {
-            throw new NotImplementedException();
+            plants.Add(resource);
+        }
+
+        public void AddResources(List<ICompostProducing> resources)
+        {
+            plants.AddRange(resources);
+        }
+
+        public double GetTotal()
+        {
+            return plants.Count;
         }
 
         public override string ToString()
@@ -34,15 +41,15 @@ namespace Trestlebridge.Models.Facilities
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";
 
-            output.Append($"Natural field {shortId} has {this._seeds.Count} seeds\n");
-            this._seeds.ForEach(a => output.Append($"   {a}\n"));
+            output.Append($"Natural Field {shortId} has {this.plants.Count} plants\n");
+            this.plants.ForEach(a => output.Append($"   {a}\n"));
 
             return output.ToString();
         }
-
-        public void AddResources(List<ISeedProducing> resources)
-        {
-            throw new NotImplementedException();
-        }
     }
+
 }
+
+
+
+

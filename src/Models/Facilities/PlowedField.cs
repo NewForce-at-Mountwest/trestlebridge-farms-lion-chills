@@ -8,8 +8,8 @@ namespace Trestlebridge.Models.Facilities
 {
     public class PlowedField : IFacility<ISeedProducing>
     {
-        private int _capacity = 65;
-        // 13 rows of plants, 5 plants per row = 65?
+        private int _capacity = 2;
+        // 13 rows of plants, 5 plants per row = 65
         private Guid _id = Guid.NewGuid();
 
         private List<ISeedProducing> _seeds = new List<ISeedProducing>();
@@ -21,21 +21,19 @@ namespace Trestlebridge.Models.Facilities
                 return _capacity;
             }
         }
-
-        public List<ISeedProducing> resources { get; set; }
+        
+        public double GetTotal()
+        {
+            return _seeds.Count;
+        }
 
         public void AddResource(ISeedProducing resource)
         {
-            throw new NotImplementedException();
+            _seeds.Add(resource);
         }
-        public void AddResource(List<ISeedProducing> resources)
-        {
-            throw new NotImplementedException();
-        }
-
         public void AddResources(List<ISeedProducing> resources)
         {
-            throw new NotImplementedException();
+            _seeds.AddRange(resources);
         }
 
         public override string ToString()
