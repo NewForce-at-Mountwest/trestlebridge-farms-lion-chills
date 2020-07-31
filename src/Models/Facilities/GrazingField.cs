@@ -37,6 +37,30 @@ namespace Trestlebridge.Models.Facilities {
             return count;
         }
 
+        public int CowCount (){
+            int count = 0;
+            count = _animals.Where(animal => animal.Type == "Cow").Count();
+            return count;
+        }
+
+        public int GoatCount (){
+            int count = 0;
+            count = _animals.Where(animal => animal.Type == "Goat").Count();
+            return count;
+        }
+
+        public int PigCount (){
+            int count = 0;
+            count = _animals.Where(animal => animal.Type == "Pig").Count();
+            return count;
+        }
+
+        public int SheepCount (){
+            int count = 0;
+            count = _animals.Where(animal => animal.Type == "Sheep").Count();
+            return count;
+        }
+
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();
