@@ -2,7 +2,7 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using Trestlebridge.Interfaces;
-
+using System.Linq;
 
 namespace Trestlebridge.Models.Facilities
 {
@@ -45,6 +45,18 @@ namespace Trestlebridge.Models.Facilities
             this.plants.ForEach(a => output.Append($"   {a}\n"));
 
             return output.ToString();
+
+                    }
+         public int SunflowerCount(){
+            int count = 0;
+            count = plants.Where(plant => plant.Type == "Sunflower").Count();
+            return count;
+        }
+        public int WildflowerCount(){
+            int count = 0;
+            count = plants.Where(plant => plant.Type == "Wildflower").Count();
+            return count;
+
         }
     }
 
