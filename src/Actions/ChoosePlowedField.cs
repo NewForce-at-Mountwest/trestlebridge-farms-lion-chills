@@ -15,26 +15,36 @@ namespace Trestlebridge.Actions
 
             for (int i = 0; i < farm.PlowedFields.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. {farm.PlowedFields[i]}");
+                try {
+                    // farm.PlowedFields[i].GetTotal() < farm.PlowedFields[i].Capacity
+                    
+                        Console.WriteLine($"{i + 1}. Plowed Field ({farm.PlowedFields[i].GetTotal()} plants)");
+                        Console.WriteLine($"{farm.PlowedFields[i].SesameCount()} Sesame");
+                        Console.WriteLine($"{farm.PlowedFields[i].SunflowerCount()} Sunflower");
+                    }
+                
+                catch (Exception)
+                {
+                    Console.WriteLine("All fields are full. Please go back to main menu to create a new field!");
+                    Console.WriteLine();
+                }
             }
-
-            Console.WriteLine();
-
             // IResource.Type
             Console.WriteLine($"Where should we place the seed?");
-            
+
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
-                   //Adds the seed to natural field
-                 if (farm.PlowedFields[choice -1].GetTotal() < farm.PlowedFields[choice - 1].Capacity)
+
+            if (farm.PlowedFields[choice - 1].GetTotal() < farm.PlowedFields[choice - 1].Capacity)
             {
                 farm.PlowedFields[choice - 1].AddResource(seed);
             }
-                else
-                {
-                    Console.WriteLine("This field is full.");
-                    Thread.Sleep(2000);
-                }
+            else
+            {
+                Console.WriteLine("This field is full.");
+                Thread.Sleep(2000);
+            }
+
 
         }
     }

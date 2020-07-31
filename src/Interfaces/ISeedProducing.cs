@@ -6,5 +6,7 @@ namespace Trestlebridge.Interfaces
     {
         double Harvest ();
 
+        string Type {get; }
+
     }
 }
