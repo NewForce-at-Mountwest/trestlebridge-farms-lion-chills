@@ -2,7 +2,7 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using Trestlebridge.Interfaces;
-
+using System.Linq;
 
 namespace Trestlebridge.Models.Facilities {
     public class GrazingField : IFacility<IGrazing>
@@ -17,22 +17,48 @@ namespace Trestlebridge.Models.Facilities {
                 return _capacity;
             }
         }
+
+        public double GetTotal()
+        {
+            return _animals.Count;
+        }
         public void AddResource (IGrazing resource)
         {
-            if(this._animals.Count >= _capacity )
-            {
-                Console.WriteLine("This field is full. Please select a different field.");
-                Console.ReadLine();
-            }
-            else
-            {
-                _animals.Add(resource);
-            }
-           
+           _animals.Add(resource);
         }
         public void AddResources(List<IGrazing> resources)
         {
             _animals.AddRange(resources);
+        }
+
+        public int OstrichCount (){
+            int count = 0;
+            count = _animals.Where(animal => animal.Type == "Ostrich").Count();
+            return count;
+        }
+
+        public int CowCount (){
+            int count = 0;
+            count = _animals.Where(animal => animal.Type == "Cow").Count();
+            return count;
+        }
+
+        public int GoatCount (){
+            int count = 0;
+            count = _animals.Where(animal => animal.Type == "Goat").Count();
+            return count;
+        }
+
+        public int PigCount (){
+            int count = 0;
+            count = _animals.Where(animal => animal.Type == "Pig").Count();
+            return count;
+        }
+
+        public int SheepCount (){
+            int count = 0;
+            count = _animals.Where(animal => animal.Type == "Sheep").Count();
+            return count;
         }
 
         public override string ToString()

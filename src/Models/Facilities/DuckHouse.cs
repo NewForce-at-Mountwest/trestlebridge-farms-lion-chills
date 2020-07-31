@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using Trestlebridge.Interfaces;
 
 
-namespace Trestlebridge.Models.Facilities {
+namespace Trestlebridge.Models.Facilities
+{
     public class DuckHouse : IFacility<IMeatProducing>
     {
         private int _capacity = 50;
@@ -12,20 +13,26 @@ namespace Trestlebridge.Models.Facilities {
 
         private List<IMeatProducing> _animals = new List<IMeatProducing>();
 
-        public double Capacity {
-            get {
+        public double Capacity
+        {
+            get
+            {
                 return _capacity;
             }
         }
 
+        public double GetTotal()
+        {
+            return _animals.Count;
+        }
         public List<IMeatProducing> resources { get; set; }
 
-        public void AddResource (IMeatProducing animal)
+        public void AddResource(IMeatProducing animal)
         {
-           
-                _animals.Add(animal);
-            
-            
+
+            _animals.Add(animal);
+
+
         }
 
         public void AddResources(List<IMeatProducing> resources)
@@ -49,6 +56,6 @@ namespace Trestlebridge.Models.Facilities {
             return output.ToString();
         }
 
-       
+
     }
 }
