@@ -8,7 +8,7 @@ namespace Trestlebridge.Models.Facilities
 {
     public class PlowedField : IFacility<ISeedProducing>
     {
-        private int _capacity = 65;
+        private int _capacity = 2;
         // 13 rows of plants, 5 plants per row = 65
         private Guid _id = Guid.NewGuid();
 
@@ -21,17 +21,19 @@ namespace Trestlebridge.Models.Facilities
                 return _capacity;
             }
         }
+        
+        public double GetTotal()
+        {
+            return _seeds.Count;
+        }
+
         public void AddResource(ISeedProducing resource)
         {
-            if(this._seeds.Count >= _capacity){
-                Console.WriteLine("This field is full. Please select a different field. Press return to go back to main menu.");
-                Console.ReadLine();
-            }
             _seeds.Add(resource);
         }
         public void AddResources(List<ISeedProducing> resources)
         {
-            throw new NotImplementedException();
+            _seeds.AddRange(resources);
         }
 
         public override string ToString()
